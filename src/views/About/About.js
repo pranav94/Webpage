@@ -1,10 +1,23 @@
 import React, {Component} from 'react';
 import {TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
-import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
+import {Bar, Doughnut, Line, Pie, Polar, Radar} from 'react-chartjs-2';
 import classnames from 'classnames';
+import { Carousel } from 'react-bootstrap';
+import nm from '../../img/nm.jpg';
+import manali from '../../img/manali.jpg';
+import nm2 from '../../img/nm2.jpg';
+import vattai from '../../img/vattai.jpg';
 
 const line = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July'
+  ],
   datasets: [
     {
       label: 'My First dataset',
@@ -25,13 +38,29 @@ const line = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [65, 59, 80, 81, 56, 55, 40]
+      data: [
+        65,
+        59,
+        80,
+        81,
+        56,
+        55,
+        40
+      ]
     }
   ]
 };
 
 const bar = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  labels: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July'
+  ],
   datasets: [
     {
       label: 'My First dataset',
@@ -40,34 +69,46 @@ const bar = {
       borderWidth: 1,
       hoverBackgroundColor: 'rgba(255,99,132,0.4)',
       hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [65, 59, 80, 81, 56, 55, 40]
+      data: [
+        65,
+        59,
+        80,
+        81,
+        56,
+        55,
+        40
+      ]
     }
   ]
 };
 
 const doughnut = {
   labels: [
-    'Red',
-    'Green',
-    'Yellow'
+    'Red', 'Green', 'Yellow'
   ],
-  datasets: [{
-    data: [300, 50, 100],
-    backgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
-    ],
-    hoverBackgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56'
-    ]
-  }]
+  datasets: [
+    {
+      data: [
+        300, 50, 100
+      ],
+      backgroundColor: [
+        '#FF6384', '#36A2EB', '#FFCE56'
+      ],
+      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+    }
+  ]
 };
 
 const radar = {
-  labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+  labels: [
+    'Eating',
+    'Drinking',
+    'Sleeping',
+    'Designing',
+    'Coding',
+    'Cycling',
+    'Running'
+  ],
   datasets: [
     {
       label: 'My First dataset',
@@ -77,9 +118,16 @@ const radar = {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(179,181,198,1)',
-      data: [65, 59, 90, 81, 56, 55, 40]
-    },
-    {
+      data: [
+        65,
+        59,
+        90,
+        81,
+        56,
+        55,
+        40
+      ]
+    }, {
       label: 'My Second dataset',
       backgroundColor: 'rgba(255,99,132,0.2)',
       borderColor: 'rgba(255,99,132,1)',
@@ -87,106 +135,85 @@ const radar = {
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(255,99,132,1)',
-      data: [28, 48, 40, 19, 96, 27, 100]
+      data: [
+        28,
+        48,
+        40,
+        19,
+        96,
+        27,
+        100
+      ]
     }
   ]
 };
 
 const pie = {
   labels: [
-    'Coding',
-    'Web/Game development',
-    'Travelling',
-    'Footall'
+    'Coding', 'Web/Game development', 'Travelling', 'Footall'
   ],
-  datasets: [{
-    data: [30, 30, 20, 20],
-    backgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56',
-    '#2ECC71'
-    ],
-    hoverBackgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56',
-    '#2ECC71'
-    ]
-  }]
+  datasets: [
+    {
+      data: [
+        30, 30, 20, 20
+      ],
+      backgroundColor: [
+        '#FF6384', '#36A2EB', '#FFCE56', '#2ECC71'
+      ],
+      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#2ECC71']
+    }
+  ]
 };
 
 const polar = {
-  datasets: [{
-    data: [
-      11,
-      16,
-      7,
-      3,
-      14
-    ],
-    backgroundColor: [
-      '#FF6384',
-      '#4BC0C0',
-      '#FFCE56',
-      '#E7E9ED',
-      '#36A2EB'
-    ],
-    label: 'My dataset' // for legend
-  }],
-  labels: [
-    'Red',
-    'Green',
-    'Yellow',
-    'Grey',
-    'Blue'
-  ]
+  datasets: [
+    {
+      data: [
+        11, 16, 7, 3, 14
+      ],
+      backgroundColor: [
+        '#FF6384', '#4BC0C0', '#FFCE56', '#E7E9ED', '#36A2EB'
+      ],
+      label: 'My dataset' // for legend
+    }
+  ],
+  labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue']
 };
 
 class About extends Component {
   render() {
-    return (       <div className="animated fadeIn">
+    return (
+      <div className="animated fadeIn">
         <div className="card-columns cols-2">
           <div className="card card-inverse card-success">
             <div className="card-header">
               About me
               <div className="card-actions">
-                <a href="http://www.chartjs.org"><small className="text-muted">docs</small></a>
+                <a href="http://www.chartjs.org">
+                  <small className="text-muted">docs</small>
+                </a>
               </div>
             </div>
             <div className="card-block">
-            Hi. Welcome to my webpage! I&nbsp;
-            <i className="fa fa-heart"></i>&nbsp;
-            javascript and building full stack web tools using it. This was built using Node+React! If you like what you see, feel free to drop a mail!
+              Hi. Welcome to my webpage! I&nbsp;
+              <i className="fa fa-heart"></i>&nbsp; javascript and building full stack web tools using it. This was built using Node+React! If you like what you see, feel free to drop a mail!
             </div>
           </div>
           <div className="card">
-            <div className="card-header">
-              Line Chart
-              <div className="card-actions">
-                <a href="http://www.chartjs.org"><small className="text-muted">docs</small></a>
-              </div>
-            </div>
-            <div className="card-block">
-              <div className="chart-wrapper">
-                <Line data={line}
-                  options={{
-                    maintainAspectRatio: false
-                  }}
-                />
-              </div>
-            </div>
+            <ControlledCarousel></ControlledCarousel>
           </div>
           <div className="card">
             <div className="card-header">
               Doughnut Chart
               <div className="card-actions">
-                <a href="http://www.chartjs.org"><small className="text-muted">docs</small></a>
+                <a href="http://www.chartjs.org">
+                  <small className="text-muted">docs</small>
+                </a>
               </div>
             </div>
             <div className="card-block">
               <div className="chart-wrapper">
-                <Doughnut data={doughnut} />
+                <Doughnut data={doughnut}/>
               </div>
             </div>
           </div>
@@ -194,12 +221,14 @@ class About extends Component {
             <div className="card-header">
               Interests
               <div className="card-actions">
-                <a href="http://www.chartjs.org"><small className="text-muted">docs</small></a>
+                <a href="http://www.chartjs.org">
+                  <small className="text-muted">docs</small>
+                </a>
               </div>
             </div>
             <div className="card-block">
               <div className="chart-wrapper">
-                <Pie data={pie} />
+                <Pie data={pie}/>
               </div>
             </div>
           </div>
@@ -207,25 +236,31 @@ class About extends Component {
             <div className="card-header">
               Radar Chart
               <div className="card-actions">
-                <a href="http://www.chartjs.org"><small className="text-muted">docs</small></a>
+                <a href="http://www.chartjs.org">
+                  <small className="text-muted">docs</small>
+                </a>
               </div>
             </div>
             <div className="card-block">
               <div className="chart-wrapper">
-                <Radar data={radar} />
+                <Radar data={radar}/>
               </div>
             </div>
           </div>
           <div className="card">
             <div className="card-header">
-              Polar Area Chart
+              Line Chart
               <div className="card-actions">
-                <a href="http://www.chartjs.org"><small className="text-muted">docs</small></a>
+                <a href="http://www.chartjs.org">
+                  <small className="text-muted">docs</small>
+                </a>
               </div>
             </div>
             <div className="card-block">
               <div className="chart-wrapper">
-                <Polar data={polar} />
+                <Line data={line} options={{
+                  maintainAspectRatio: false
+                }}/>
               </div>
             </div>
           </div>
@@ -234,5 +269,57 @@ class About extends Component {
     )
   }
 }
+
+const ControlledCarousel = React.createClass({
+  getInitialState() {
+    return {
+      index: 0,
+      direction: null
+    };
+  },
+
+  handleSelect(selectedIndex, e) {
+    this.setState({
+      index: selectedIndex,
+      direction: e.direction
+    });
+  },
+
+  render() {
+    return (
+      <Carousel activeIndex={this.state.index} direction={this.state.direction} onSelect={this.handleSelect}>
+        <Carousel.Item>
+          <img width={900} height={500} alt="900x500" src={nm}/>
+          <Carousel.Caption>
+            <h3>Nishani Motte</h3>
+            <p>A monsoon trek.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img width={900} height={500} alt="900x500" src={manali}/>
+          <Carousel.Caption>
+            <h3>Manali</h3>
+            <p>Mt.Kshithidhar at 17,500 feet altitude</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img width={900} height={500} alt="900x500" src={nm2}/>
+          <Carousel.Caption>
+            <h3>Nishani Motte</h3>
+            <p>A monsoon trek.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img width={900} height={500} alt="900x500" src={vattai}/>
+          <Carousel.Caption>
+            <h3>Vattaikanal</h3>
+            <p>One of the most serene places around!</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    );
+  }
+});
+
 
 export default About;

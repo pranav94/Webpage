@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import dp from '../../dp.jpg'
+import dp from '../../img/dp.jpg'
 class Header extends Component {
 
   sidebarToggle(e) {
