@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
 import {TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
-import {Bar, Doughnut, Line, Pie, Polar, Radar} from 'react-chartjs-2';
+import {
+  Bar,
+  Doughnut,
+  Line,
+  Pie,
+  Polar,
+  Radar
+} from 'react-chartjs-2';
 import classnames from 'classnames';
-import { Carousel } from 'react-bootstrap';
+import {Carousel} from 'react-bootstrap';
 import nm from '../../img/nm.jpg';
 import manali from '../../img/manali.jpg';
 import nm2 from '../../img/nm2.jpg';
@@ -150,19 +157,30 @@ const radar = {
 
 const pie = {
   labels: [
-    'Coding', 'Web/Game development', 'Travelling', 'Footall'
+    'Coding', 'Web development', 'Game development', 'Travelling', 'Adventure Sports', 'Football', 'Guitar'
   ],
   datasets: [
     {
       data: [
-        30, 30, 20, 20
+        20, 25, 5, 15, 10, 20, 5
       ],
       backgroundColor: [
-        '#FF6384', '#36A2EB', '#FFCE56', '#2ECC71'
+        '#FF6384', '#36A2EB', '#CDDC39', '#2ECC71', '#1abc9c', '#FFCE56', '#9E9E9E'
       ],
-      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#2ECC71']
+      hoverBackgroundColor: ['#FF6384', '#36A2EB', '#CDDC39', '#2ECC71', '#1abc9c', '#FFCE56', '#9E9E9E']
     }
   ]
+};
+
+const pieOptions = {
+  tooltips: {
+    callbacks: {
+      label: function(tooltipItems, data) {
+        return data.labels[tooltipItems.index] + ': ' + data.datasets[0].data[tooltipItems.index] + '%';
+      }
+    }
+
+  }
 };
 
 const polar = {
@@ -200,6 +218,9 @@ class About extends Component {
             </div>
           </div>
           <div className="card">
+            <div className="card-header">
+              Travel Gallery 
+            </div>
             <ControlledCarousel></ControlledCarousel>
           </div>
           <div className="card">
@@ -228,7 +249,7 @@ class About extends Component {
             </div>
             <div className="card-block">
               <div className="chart-wrapper">
-                <Pie data={pie}/>
+                <Pie data={pie} options={pieOptions}/>
               </div>
             </div>
           </div>
@@ -272,17 +293,11 @@ class About extends Component {
 
 const ControlledCarousel = React.createClass({
   getInitialState() {
-    return {
-      index: 0,
-      direction: null
-    };
+    return {index: 0, direction: null};
   },
 
   handleSelect(selectedIndex, e) {
-    this.setState({
-      index: selectedIndex,
-      direction: e.direction
-    });
+    this.setState({index: selectedIndex, direction: e.direction});
   },
 
   render() {
@@ -320,6 +335,5 @@ const ControlledCarousel = React.createClass({
     );
   }
 });
-
 
 export default About;
