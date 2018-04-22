@@ -737,6 +737,7 @@ pre {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 20px;
   padding-right: 15px;
   padding-left: 15px; }
   @media (min-width: 576px) {
@@ -2879,7 +2880,13 @@ tbody.collapse.show {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  border: 1px solid #cfd8dc; }
+  border: 1px solid #cfd8dc;
+  font-size: 15px;
+}
+
+.card-text{
+ padding: 10px;
+}
 
 .card-block {
   flex: 1 1 auto;
@@ -7317,6 +7324,7 @@ base-chart.chart {
 .app-footer {
   min-height: 50px;
   padding: 0 1rem;
+  font-size: 12px;
   line-height: 50px;
   color: #263238;
   background: #eceff1;
