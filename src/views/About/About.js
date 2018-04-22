@@ -122,7 +122,7 @@ class About extends Component {
               </div>
             </div>
             <div className="card-block">
-              <div className="chart-wrapper" style={{'text-align': 'center'}}>
+              <div className="chart-wrapper" style={{textAlign: 'center'}}>
                 <BeatLoader color="#5adec3" loading={this.state.loadingGithub}/>
                 <img onLoad={this.handleGithubLoaded.bind(this)} style={{width: "100%"}} src="http://ghchart.rshah.org/pranav94" alt="Github chart" />
               </div>

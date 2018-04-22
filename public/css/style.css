@@ -2646,7 +2646,7 @@ tbody.collapse.show {
 .navbar-toggler {
   cursor: pointer;
   padding: 0.25rem 0.75rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1;
   background: transparent;
   border: 1px solid transparent; }
@@ -2658,8 +2658,8 @@ tbody.collapse.show {
 
 .navbar-toggler-icon {
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1em;
+  height: 1em;
   vertical-align: middle;
   content: "";
   background: no-repeat center center;
@@ -3028,7 +3028,7 @@ tbody.collapse.show {
   .card-inverse .card-text,
   .card-inverse .card-subtitle,
   .card-inverse .card-blockquote .blockquote-footer {
-    color: rgba(255, 255, 255, 0.65); }
+    color: rgba(255, 255, 255, 0.9); }
   .card-inverse .card-link:focus, .card-inverse .card-link:hover {
     color: #fff; }
 
