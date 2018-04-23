@@ -20,16 +20,14 @@ class Header extends Component {
   render() {
     return (
       <header className="app-header navbar">
-        <ul className="nav navbar-nav d-md-down-none">
-          <li className="nav-item">
-            <button className="nav-link navbar-toggler" type="button" onClick={this.sidebarToggle}>&#9776;</button>
-          </li>
-        </ul>
-          <a className = "navbar-brand" href = "/" > <div className="profile-header-container">
+        <button className="navbar-toggler" type="button" onClick={this.sidebarToggle}>&#9776;</button>
+        <a className = "navbar-brand" href = "/" >
+          <div className="profile-header-container">
             <div className="profile-header-img">
               <img className="rounded-circle" src={dp} alt="Profile"/>
             </div>
-          </div> </a>
+          </div>
+        </a>
       </header>
     )
   }
